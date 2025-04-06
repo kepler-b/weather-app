@@ -1,0 +1,292 @@
+img {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px auto;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+  margin: auto 5px;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: var(--asidebar-width) calc(100% - var(--asidebar-width));
+}
+aside {
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  padding: 20px 40px;
+}
+
+
+
+main {
+  background: #f7f6f9;
+  width: 100%;
+  height: 100vh;
+}
+.navbar-container {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+
+.navbar-controls-avatar,.navbar-tabs{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 20px;
+}
+
+.navbar-tabs button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-tabs button::after, .navbar-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(1, 1, 1, 0.436);
+  transition: width 0.2s ease-out;
+}
+
+.navbar-tabs button.active::after{
+  width: 100%;
+  background: rgb(255, 104, 104);
+}
+
+.navbar-tabs button:hover::after {
+  width: 100%;
+}
+
+label {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+label span {
+  z-index: 1;
+}
+
+.temp-type {
+  --webkit-appearance: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* .temp-type::after {
+  content: "";
+  position:  absolute;
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.temp-type:checked {
+  background-color: black;
+}
+
+label .temp-type:checked ~ span{
+  color: white;
+}
+
+.avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+
+
+
+.forecast {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(230, 230, 218);
+  padding: 20px 40px;
+  display: flex;
+}
+
+.todaysinfocard {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 16px;
+}
+
+.highlights {
+  height: calc(100% - 260px);
+  padding: 20px 40px;
+}
+.highlights h1 {
+  font-size: 1.4rem;
+}
+
+.weatherCard {
+  flex-grow: 1;
+  width: 120px;
+  height: 100%;
+  background: white;
+  margin-right: 10px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.weatherCard h3 {
+  font-weight: normal;
+}
+
+.wct {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.temperaturecards {
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3.1));
+  grid-auto-rows: 200px;
+  place-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+
+
+.Dayout {
+  width: 100%;
+  height: 100%;
+  background: white;
+  margin-right: 10px;
+  border-radius: 16px;
+  padding: 0px 20px 20px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Dayout h2 {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.cardHeading{
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.476);
+  text-transform: capitalize;
+}
+
+
+.cardContent {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.cardContent span {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.searchButton{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.searchButton img {
+  height: 100%;
+}
+.searchButton input {
+  flex-grow: 2;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+.searchButton input::placeholder {
+  color: black;
+}
+
+.searchButton .locate_icon {
+  height: 100%;
+  background: #e8ddff;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+
+
+/* PopUp Styling */
+
+.popup-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.101);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.popup-container .popup-contents {
+  width: 800px;
+  height: 400px;
+  background: white;
+  margin-top: 100px;
+  border-radius: 20px;
+  position: relative;
+  /* z-index: 1000; */
+}
+
+.popup-container .popup-contents button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5%;
+  right: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
