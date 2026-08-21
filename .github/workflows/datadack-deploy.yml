@@ -1,0 +1,23 @@
+# Managed by DataDack Cloud. Build logic lives centrally, so platform
+# updates do not require changes to this repository.
+# datadack-workflow-version: 11
+name: DataDack Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: datadack-deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    uses: DataDack/apps-workflow/.github/workflows/build.yml@main
+    with:
+      project_id: ${{ vars.DATADACK_PROJECT_ID }}
